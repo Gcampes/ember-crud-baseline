@@ -10,6 +10,9 @@ Router.map(function() {
     this.route('add');
     this.route('edit', {path:'edit/:id'});
   });
+  this.route('city', function(){
+    this.route('add');
+  });
 });
 
 export default Router;

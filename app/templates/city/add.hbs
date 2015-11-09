@@ -1,0 +1,10 @@
+<h1>Create City</h1>
+
+<form class="right-form">
+{{#each definitions as |definition|}}
+  {{crud-input model=model name=definition.value label=definition.label errors=errors}}
+{{/each}}
+<button type="button" name="button" {{action 'saveRecord'}}>Save</button>
+</form>
+
+{{outlet}}

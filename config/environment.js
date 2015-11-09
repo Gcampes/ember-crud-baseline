@@ -53,5 +53,9 @@ module.exports = function(environment) {
     'frame-src': "'none'"
   }
 
+  ENV.i18n = {
+    defaultLocale: 'pt'
+  };
+
   return ENV;
 };
