@@ -1,12 +1,10 @@
 <h1>Create Person</h1>
 
 <form class="right-form">
-
 {{#each definitions as |def|}}
   {{crud-input model=model name=def.value label=def.label errors=errors}}
 {{/each}}
-
-  <button type="button" name="button" {{action 'addRecord'}}>Save</button>
+<button type="button" name="button" {{action 'saveRecord'}}>Save</button>
 </form>
 
 {{outlet}}

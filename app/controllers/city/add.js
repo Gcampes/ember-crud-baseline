@@ -5,25 +5,37 @@ import MagicCrud from 'ember-imdt-crud/mixins/ember-imdt-magic-crud';
 export default Ember.Controller.extend(EmberValidations, MagicCrud, {
   definitions: [
     {
-      value: 'model.firstName',
-      label: 'Primeiro Nome',
+      value: 'model.name',
+      label: 'Name',
       type: 'text'
     },
 
     {
-      value: 'model.lastName',
-      label: 'Sobrenome',
+      value: 'model.country',
+      label: 'Country',
+      type: 'text'
+    },
+
+    {
+      value: 'model.state',
+      label: 'State/Province',
       type: 'text'
     }
   ],
 
   validations: {
-   'model.firstName': {
+   'model.country': {
+     presence:true,
      length: {minimum: 5}
    },
 
-   'model.lastName':{
+   'model.name':{
+     presence:true,
      length: {minimum: 2}
+   },
+
+   'model.state':{
+     presence:true
    }
   },
 });
