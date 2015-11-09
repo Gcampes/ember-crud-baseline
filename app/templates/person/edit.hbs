@@ -1,7 +1,10 @@
 <h1>Edit Person</h1>
+
 <form class="right-form">
-  {{input type='text' value=model.firstName}}
-  {{input type='text' value=model.lastName}}
-  <button type="button" name="button" {{action 'saveRecord'}}>Save</button>
+{{#each definitions as |def|}}
+  {{crud-input model=model name=def.value label=def.label errors=errors edit=true}}
+{{/each}}
+<button type="button" name="button" {{action 'saveRecord'}}>Save</button>
 </form>
+
 {{outlet}}

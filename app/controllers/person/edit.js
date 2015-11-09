@@ -1,15 +1,29 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
+import MagicCrud from 'ember-imdt-crud/mixins/ember-imdt-magic-crud';
 
-export default Ember.Controller.extend({
-  actions:{
-    saveRecord(){
-      let flashMessages = Ember.get(this, 'flashMessages');
+export default Ember.Controller.extend(EmberValidations, MagicCrud, {
+  definitions: [
+    {
+      value: 'model.firstName',
+      label: 'Primeiro Nome',
+      type: 'text'
+    },
 
-      this.model.save().then(function(){
-        flashMessages.success('Successfully saved record');
-      }, function(){
-        flashMessages.warning('Error saving record');
-      });
+    {
+      value: 'model.lastName',
+      label: 'Sobrenome',
+      type: 'text'
     }
-  }
+  ],
+
+  validations: {
+   'model.firstName': {
+     length: {minimum: 5}
+   },
+
+   'model.lastName':{
+     length: {minimum: 2}
+   }
+  },
 });
