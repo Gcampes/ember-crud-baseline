@@ -4,7 +4,7 @@ import MagicCrud from 'ember-imdt-crud/mixins/ember-imdt-magic-crud';
 
 export default Ember.Controller.extend(EmberValidations, MagicCrud, {
   magicCrud: {
-    success: 'City saved successfully',
+    success: 'City updated successfully',
     routeAfter: 'city'
   },
 
