@@ -3,7 +3,7 @@ import DS from 'ember-data';
 let City = DS.Model.extend({
   name: DS.attr('string'),
   country: DS.attr('string'),
-  state: DS.attr('string')
+  state: DS.attr('string'),
 });
 
 City.reopenClass({
@@ -37,7 +37,7 @@ City.reopenClass({
             name: "City 5",
             country: "Country 5",
             state: "State 5"
-        }
+        },
     ]
 });
 

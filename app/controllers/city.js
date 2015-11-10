@@ -18,6 +18,11 @@ export default Ember.Controller.extend({
   {
     contentPath: 'state',
     columnTitle: 'State/Province'
+  },
+  {
+    contentPath: 'template',
+    columnTitle: 'Delete',
+    template: 'custom/table-actions'
   }]),
 
   actions: {
@@ -28,7 +33,7 @@ export default Ember.Controller.extend({
     },
 
     editRecord(item){
-      this.transitionTo('person.edit', item);
+      this.transitionTo('city.edit', item);
     }
   }
 });
