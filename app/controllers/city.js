@@ -25,15 +25,44 @@ export default Ember.Controller.extend({
     template: 'custom/table-actions'
   }]),
 
-  actions: {
+  magicCrud: {
+    success: 'City saved successfully',
+    routeAfter: 'city'
+  },
 
-    deleteRecord(item){
-      item.deleteRecord();
-      item.save();
+  definitions: [
+    {
+      attribute: 'model.name',
+      label: 'Name',
+      type: 'text'
     },
 
-    editRecord(item){
-      this.transitionTo('city.edit', item);
+    {
+      attribute: 'model.country',
+      label: 'Country',
+      type: 'text'
+    },
+
+    {
+      attribute: 'model.state',
+      label: 'State/Province',
+      type: 'text'
     }
-  }
+  ],
+
+  validations: {
+   'model.country': {
+     presence:true,
+     length: {minimum: 5, maximum: 10}
+   },
+
+   'model.name':{
+     presence:true,
+     length: {minimum: 2}
+   },
+
+   'model.state':{
+     presence:true
+   }
+  },
 });

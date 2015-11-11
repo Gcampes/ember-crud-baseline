@@ -21,15 +21,32 @@ export default Ember.Controller.extend({
     template: 'custom/table-actions'
   }]),
 
-  actions: {
+  validations: {
+   'model.firstName': {
+     length: {minimum: 5}
+   },
 
-    deleteRecord(item){
-      item.deleteRecord();
-      item.save();
+   'model.lastName':{
+     length: {minimum: 2}
+   }
+  },
+
+  definitions: [
+    {
+      attribute: 'model.firstName',
+      label: 'Primeiro Nome',
+      type: 'text'
     },
 
-    editRecord(item){
-      this.transitionTo('person.edit', item);
+    {
+      attribute: 'model.lastName',
+      label: 'Sobrenome',
+      type: 'text'
     }
-  }
+  ],
+
+  magicCrud: {
+    success: 'Person added successfully',
+    routeAfter: 'person'
+  },
 });

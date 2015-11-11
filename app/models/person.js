@@ -10,27 +10,27 @@ Person.reopenClass({
         {
             id: 1,
             firstName: "Person",
-            lastName: "1"
+            lastName: "11"
         },
         {
             id: 2,
             firstName: "Person",
-            lastName: "2"
+            lastName: "22"
         },
         {
           id: 3,
             firstName: "Person",
-            lastName: "3"
+            lastName: "33"
         },
         {
           id: 4,
             firstName: "Person",
-            lastName: "4"
+            lastName: "44"
         },
         {
             id: 5,
             firstName: "Person",
-            lastName: "5"
+            lastName: "55"
         }
     ]
 });
