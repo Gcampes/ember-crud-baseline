@@ -14,6 +14,10 @@ Router.map(function() {
     this.route('add');
     this.route('edit', {path:'edit/:id'});
   });
+  this.route('category', function(){
+    this.route('add');
+    this.route('edit', {path:'category/:id'});
+  });
 });
 
 export default Router;

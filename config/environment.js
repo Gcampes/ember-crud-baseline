@@ -45,7 +45,7 @@ module.exports = function(environment) {
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
-    'font-src': "'self' https://fonts.gstatic.com https://maxcdn.bootstrapcdn.com",
+    'font-src': "'self' https://fonts.gstatic.com https://maxcdn.bootstrapcdn.com http://bootstrap-live-customizer.com",
     'connect-src': "'self'",
     'img-src': "'self'",
     'report-uri':"'localhost'",

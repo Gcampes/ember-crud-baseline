@@ -14,39 +14,49 @@ export default Ember.Controller.extend({
   }, {
     contentPath: 'lastName',
     columnTitle: 'Last Name'
+  }, {
+    contentPath: 'active',
+    columnTitle: 'Active'
   },
   {
     contentPath: 'template',
     columnTitle: 'Delete',
-    template: 'custom/table-actions'
+    template: 'custom/table-actions',
+    isSortable: false
   }]),
-
-  validations: {
-   'model.firstName': {
-     length: {minimum: 5}
-   },
-
-   'model.lastName':{
-     length: {minimum: 2}
-   }
-  },
 
   definitions: [
     {
+      attribute: 'model.active',
+      label: 'Situação',
+      type: 'switch',
+      validations:{
+        presence: true
+      }
+    },
+
+    {
       attribute: 'model.firstName',
       label: 'Primeiro Nome',
-      type: 'text'
+      type: 'text',
+      validations:{
+        presence: true,
+        length: {minimum: 5},
+      }
     },
 
     {
       attribute: 'model.lastName',
       label: 'Sobrenome',
-      type: 'text'
-    }
+      type: 'text',
+      validations:{
+        length: {minimum: 2}
+      }
+    },
   ],
 
   magicCrud: {
-    success: 'Person added successfully',
+    success: 'Person saved successfully',
     routeAfter: 'person'
   },
 });
