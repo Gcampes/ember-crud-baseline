@@ -20,13 +20,17 @@ export default Ember.Controller.extend({
     columnTitle: 'State/Province'
   },
   {
+    contentPath: 'category.name',
+    columnTitle: 'Category'
+  },
+  {
     contentPath: 'template',
     columnTitle: 'Delete',
-    template: 'custom/table-actions'
+    template: 'custom/table-actions',
+    isSortable: false
   }]),
 
   magicCrud: {
-    success: 'City saved successfully',
     routeAfter: 'city'
   },
 
@@ -34,35 +38,30 @@ export default Ember.Controller.extend({
     {
       attribute: 'model.name',
       label: 'Name',
-      type: 'text'
+      type: 'text',
+      validations:{
+        presence: true,
+        length: {minimum:5, maximum:10}
+      }
     },
 
     {
       attribute: 'model.country',
       label: 'Country',
-      type: 'text'
+      type: 'text',
+      validations:{
+        presense: true,
+        length: {minimum: 2}
+      }
     },
 
     {
       attribute: 'model.state',
       label: 'State/Province',
-      type: 'text'
-    }
+      type: 'text',
+      validations:{
+        presence: true
+      }
+    },
   ],
-
-  validations: {
-   'model.country': {
-     presence:true,
-     length: {minimum: 5, maximum: 10}
-   },
-
-   'model.name':{
-     presence:true,
-     length: {minimum: 2}
-   },
-
-   'model.state':{
-     presence:true
-   }
-  },
 });
