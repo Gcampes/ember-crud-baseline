@@ -28,12 +28,10 @@ export default Ember.Controller.extend({
     template: 'custom/table-actions',
     isSortable: false
   }]),
-  //
-  // magicCrud: {
-  //   routeAfter: 'citizen'
-  // },
 
-
+  magicCrud: {
+    routeAfter: 'citizen'
+  },
 
   definitions: [
     {
