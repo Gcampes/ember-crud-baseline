@@ -29,18 +29,11 @@ export default Ember.Controller.extend({
     isSortable: false
   }]),
 
-  magicCrud: {
-    routeAfter: 'citizen'
-  },
-
   definitions: [
     {
       attribute: 'model.active',
       label: 'Active',
-      type: 'switch',
-      validations:{
-        presence: true,
-      }
+      type: 'switch'
     },
 
     {

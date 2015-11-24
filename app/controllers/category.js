@@ -36,10 +36,5 @@ export default Ember.Controller.extend({
         length: {minimum: 5}
       }
     },
-
-  ],
-
-  magicCrud: {
-    routeAfter: 'category'
-  },
+  ]
 });
