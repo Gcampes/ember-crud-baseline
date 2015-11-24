@@ -30,10 +30,6 @@ export default Ember.Controller.extend({
     isSortable: false
   }]),
 
-  magicCrud: {
-    routeAfter: 'city'
-  },
-
   definitions: [
     {
       attribute: 'model.name',

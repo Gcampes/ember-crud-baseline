@@ -29,10 +29,7 @@ export default Ember.Controller.extend({
     {
       attribute: 'model.active',
       label: 'Situação',
-      type: 'switch',
-      validations:{
-        presence: true
-      }
+      type: 'switch'
     },
 
     {
@@ -53,10 +50,5 @@ export default Ember.Controller.extend({
         length: {minimum: 2}
       }
     },
-  ],
-
-  magicCrud: {
-    success: 'Person saved successfully',
-    routeAfter: 'person'
-  },
+  ]
 });
