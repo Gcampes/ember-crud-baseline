@@ -20,7 +20,7 @@ Router.map(function() {
   });
   this.route('citizen', function() {
     this.route('add');
-    this.route('edit');
+    this.route('edit', {path:'edit/:id'});
   });
 });
 
