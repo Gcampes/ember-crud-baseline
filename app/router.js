@@ -18,6 +18,10 @@ Router.map(function() {
     this.route('add');
     this.route('edit', {path:'category/:id'});
   });
+  this.route('citizen', function() {
+    this.route('add');
+    this.route('edit');
+  });
 });
 
 export default Router;
