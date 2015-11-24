@@ -3,7 +3,10 @@ import DS from 'ember-data';
 let Person = DS.Model.extend({
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
-  active: DS.attr('boolean')
+  active: DS.attr('boolean'),
+  name: Ember.computed('firstName', 'lastName', function(){
+    return this.get('firstName') + " " + this.get('lastName');
+  })
 });
 
 Person.reopenClass({
