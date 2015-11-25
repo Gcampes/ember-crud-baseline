@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
     contentPath: 'idnumber',
     columnTitle: 'Id number'
   }, {
-    contentPath: 'person.name',
+    contentPath: 'person.stringify',
     columnTitle: 'Name'
   },
   {
@@ -29,63 +29,52 @@ export default Ember.Controller.extend({
     isSortable: false
   }]),
 
-  definitions: [
-    {
-      attribute: 'model.active',
-      label: 'Active',
-      type: 'switch'
-    },
+  definitions: new A([
+      {
+        attribute: 'model.active',
+        label: 'Active',
+        type: 'switch'
+      },
 
-    {
-      attribute: 'model.idnumber',
-      label: 'Id Number',
-      type: 'text',
-      validations:{
-        presence: true,
-        length: {minimum:5, maximum:10}
+      {
+        attribute: 'model.idnumber',
+        label: 'Id Number',
+        type: 'text',
+        validations:{
+          presence: true,
+          length: {minimum:5, maximum:10}
+        }
+      },
+
+      {
+        attribute: 'model.person',
+        label: 'Person',
+        type: 'select',
+        selectFunction: function(self){
+          self.store.findAll('person');
+          return self.store.filter('person', {}, function(item){
+            return item.get('active') || self.get('model.person.id') == item.id;
+          });
+        },
+        selectValuePath: 'id',
+        selectLabelPath: 'stringify',
+        validations:{
+          presence: true,
+        }
+      },
+
+      {
+        attribute: 'model.city',
+        label: 'City',
+        type: 'select',
+        selectFunction: function(self){
+          self.store.findAll('city');
+          return self.store.filter('city', {}, function(item){
+            return item.get('active') || self.get('model.city.id') == item.id;
+          });
+        },
+        selectValuePath: 'id',
+        selectLabelPath: 'name'
       }
-    },
-
-    {
-      attribute: 'model.person',
-      label: 'Person',
-      type: 'select',
-      selectContent: 'person',
-      selectValuePath: 'id',
-      selectLabelPath: 'name',
-      validations:{
-        presence: true,
-      }
-    },
-
-
-    {
-      attribute: 'model.city',
-      label: 'City',
-      type: 'select',
-      selectContent: 'city',
-      selectValuePath: 'id',
-      selectLabelPath: 'name'
-    }
-  ]
-  //
-  //   {
-  //     attribute: 'model.city.name',
-  //     label: 'Country',
-  //     type: 'text',
-  //     validations:{
-  //       presense: true,
-  //       length: {minimum: 2}
-  //     }
-  //   },
-  //
-  //   {
-  //     attribute: 'model.state',
-  //     label: 'State/Province',
-  //     type: 'text',
-  //     validations:{
-  //       presence: true
-  //     }
-  //   },
-  // ],
+    ])
 });
