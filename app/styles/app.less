@@ -1,9 +1,39 @@
 .selectize-input {
   z-index: 0;
+
+  .item{
+    background-color: #868686;
+    top: -4px;
+    margin-bottom: -8px;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border-bottom: 5px solid #6F6F6F;
+  }
+}
+
+.bootstrap-switch-label{
+  border-bottom: 5px solid #ECECEC;
+}
+
+.bootstrap-switch-primary{
+  border-bottom: 5px solid #127BA3;
+}
+
+.bootstrap-switch-default{
+  border-bottom: 5px solid #D0D0D0;
+}
+
+
+
+.selectize-control.plugin-remove_button [data-value] {
+  position: relative;
+  padding-right: 10px !important;
 }
 
 form>.btn{
   margin-top: 5px;
+  float: right;
   &:hover{
     margin-top: 6px;
   }
