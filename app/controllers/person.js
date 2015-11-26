@@ -5,7 +5,7 @@ const {
 } = Ember;
 
 export default Ember.Controller.extend({
-  columns: new A([{
+  tableOptionsMC: new A([{
     contentPath: 'id',
     columnTitle: 'ID',
   }, {
@@ -17,22 +17,18 @@ export default Ember.Controller.extend({
   }, {
     contentPath: 'active',
     columnTitle: 'Active'
-  },
-  {
+  }, {
     contentPath: 'template',
     columnTitle: 'Delete',
     template: 'custom/table-actions',
     isSortable: false
   }]),
 
-  definitions: [
-    {
+  formDefinitionsMC: [{
       attribute: 'model.active',
       label: 'Situação',
       type: 'switch'
-    },
-
-    {
+    }, {
       attribute: 'model.firstName',
       label: 'Primeiro Nome',
       type: 'text',
@@ -40,9 +36,7 @@ export default Ember.Controller.extend({
         presence: true,
         length: {minimum: 5},
       }
-    },
-
-    {
+    }, {
       attribute: 'model.lastName',
       label: 'Sobrenome',
       type: 'text',
