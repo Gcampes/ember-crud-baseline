@@ -8,7 +8,7 @@ let Person = DS.Model.extend({
     return this.get('firstName') + " " + this.get('lastName');
   }),
   stringify: Ember.computed('name', 'active', function(){
-    return this.get('id') + ' - ' + this.get('name') + ' - ' + ((this.get('active')) ? 'ativo' : 'inativo');
+    return this.get('name') + ' - ' + ((this.get('active')) ? 'ativo' : 'inativo');
   })
 });
 
