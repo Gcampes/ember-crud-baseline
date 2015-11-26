@@ -42,7 +42,7 @@ export default Ember.Controller.extend({
         type: 'text',
         validations:{
           presence: true,
-          length: {minimum:5, maximum:10}
+          length: {minimum:10, maximum:10}
         }
       },
 
@@ -67,8 +67,7 @@ export default Ember.Controller.extend({
         attribute: 'model.city',
         label: 'City',
         type: 'select',
-        selectFunction: function(self){
-          self.store.findAll('city');
+        selectFunction: function(self, flag){
           return self.store.filter('city', {}, function(item){
             return item.get('active') || self.get('model.city.id') == item.id;
           });
