@@ -5,7 +5,7 @@ const {
 } = Ember;
 
 export default Ember.Controller.extend({
-  columns: new A([{
+  tableOptionsMC: new A([{
     contentPath: 'id',
     columnTitle: 'ID',
   }, {
@@ -21,14 +21,11 @@ export default Ember.Controller.extend({
     isSortable: false
   }]),
 
-  definitions: [
-    {
+  formDefinitionsMC: [{
       attribute: 'model.active',
       label: 'Status',
       type: 'switch'
-    },
-
-    {
+    }, {
       attribute: 'model.name',
       label: 'Name',
       type: 'text',
