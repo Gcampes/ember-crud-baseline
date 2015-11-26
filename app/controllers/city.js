@@ -59,5 +59,18 @@ export default Ember.Controller.extend({
         presence: true
       }
     },
+
+    {
+      attribute: 'model.category',
+      label: 'Category',
+      type: 'select',
+      selectFunction: function(self){
+        return self.store.filter('category', {}, function(category){
+          return category.get('active') || self.get('model.category.id') == category.get('id');
+        })
+      },
+      selectValuePath: 'id',
+      selectLabelPath: 'name'
+    }
   ],
 });
