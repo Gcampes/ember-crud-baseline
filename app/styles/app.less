@@ -12,6 +12,11 @@
   }
 }
 
+.selectize-control.single .selectize-input{
+  background-image: none;
+  background-color: #FBFBFB;
+}
+
 .bootstrap-switch-wrapper {
   outline: none;
   box-shadow:none !important;
@@ -190,8 +195,15 @@ body{
   float: right;
 }
 
-.form-control{
+.form-control {
   border-color: #D8D8D8;
+  border-bottom: 4px solid #D8D8D8;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control.has-error{
+  border: 1px solid black !important;
 }
 
 table thead > tr > th.sort:after {

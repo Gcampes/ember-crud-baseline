@@ -22,6 +22,18 @@ Router.map(function() {
     this.route('add');
     this.route('edit', {path:'edit/:id'});
   });
+  this.route('modelo', function() {
+    this.route('add');
+    this.route('edit', {path:'edit/:id'});
+  });
+  this.route('meta-generica', function() {
+    this.route('add');
+    this.route('edit', {path:'edit/:id'});
+  });
+  this.route('nivel-capacidade', function() {
+    this.route('add');
+    this.route('edit', {path:'edit/:id'});
+  });
 });
 
 export default Router;
