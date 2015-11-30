@@ -4,9 +4,7 @@ let Modelo = DS.Model.extend({
   ativo: DS.attr('boolean'),
   nome: DS.attr('string'),
   sigla: DS.attr('string'),
-  descricao: DS.attr('string'),
-
-  metasgenericas: DS.hasMany('meta-generica')
+  descricao: DS.attr('string')
 });
 
 Modelo.reopenClass({

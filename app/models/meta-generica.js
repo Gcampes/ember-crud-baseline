@@ -7,7 +7,9 @@ let MetaGenerica = DS.Model.extend({
   descricao: DS.attr('string'),
 
   modelo: DS.belongsTo('modelo', {async: true}),
-  nivelcapacidade: DS.belongsTo('nivel-capacidade', {async: true, defaultValue: 1})
+  nivelcapacidade: DS.belongsTo('nivel-capacidade', {async: true, defaultValue: 1}),
+
+  modeloid: Ember.computed.alias('modelo.id')
 });
 
 MetaGenerica.reopenClass({

@@ -5,10 +5,6 @@ const{
 } = Ember;
 
 export default Ember.Controller.extend({
-  didModelChange: Ember.observer('model.nivelcapacidade', function(){
-    console.log(this.get('model.nivelcapacidade'));
-  }),
-
   tableOptionsMC: new A([{
     contentPath: 'id',
     columnTitle: 'Id'
@@ -30,8 +26,8 @@ export default Ember.Controller.extend({
     columnTitle: 'Modelo'
   },
   {
-    contentPath: 'nivelcapacidade.nome',
-    columnTitle: 'Nível de Capacidade'
+    contentPath: 'nivelmaturidade.nome',
+    columnTitle: 'Nível Maturidade'
   },
   {
     contentPath: 'template',
@@ -72,29 +68,29 @@ export default Ember.Controller.extend({
       label: 'Modelo',
       type: 'select',
       selectFunction: function(self){
-        return self.store.filter('modelo', {}, function(item){
-          return item.get('ativo') || self.get('model.modelo.id') === item.id;
+        return self.store.filter('modelo', {}, function(modelo){
+          return modelo.get('ativo') || self.get('model.modelo.id') === modelo.id
         });
       },
       selectValuePath: 'id',
       selectLabelPath: 'nome',
       validations:{
         relationshipPresence: true
-      }
+      },
     }, {
-      attribute: 'model.nivelcapacidade',
-      label: 'Nível de Capacidade',
+      attribute: 'model.nivelmaturidade',
+      label: 'Nível de Maturidade',
       type: 'select',
       selectFunction: function(self){
-        return self.store.filter('nivel-capacidade', {}, function(item){
-          return item.get('ativo') || self.get('model.nivel-capacidade.id') === item.id;
+        return self.store.filter('nivel-maturidade', {}, function(nivelMaturidade){
+          return nivelMaturidade.get('ativo') || self.get('model.nivel-maturidade.id') === nivelMaturidade.id
         });
       },
       selectValuePath: 'id',
       selectLabelPath: 'nome',
       validations:{
         relationshipPresence: true
-      }
-    },
+      },
+    }
   ]
 });

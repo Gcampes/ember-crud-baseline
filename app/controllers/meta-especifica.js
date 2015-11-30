@@ -5,10 +5,6 @@ const{
 } = Ember;
 
 export default Ember.Controller.extend({
-  didModelChange: Ember.observer('model.nivelcapacidade', function(){
-    console.log(this.get('model.nivelcapacidade'));
-  }),
-
   tableOptionsMC: new A([{
     contentPath: 'id',
     columnTitle: 'Id'
@@ -26,12 +22,8 @@ export default Ember.Controller.extend({
     columnTitle: 'Desrição'
   },
   {
-    contentPath: 'modelo.nome',
-    columnTitle: 'Modelo'
-  },
-  {
-    contentPath: 'nivelcapacidade.nome',
-    columnTitle: 'Nível de Capacidade'
+    contentPath: 'areaprocesso.nome',
+    columnTitle: 'Área de Processo'
   },
   {
     contentPath: 'template',
@@ -68,33 +60,16 @@ export default Ember.Controller.extend({
         presence: true
       }
     }, {
-      attribute: 'model.modelo',
-      label: 'Modelo',
+      attribute: 'model.areaprocesso',
+      label: 'Área de Processo',
       type: 'select',
       selectFunction: function(self){
-        return self.store.filter('modelo', {}, function(item){
-          return item.get('ativo') || self.get('model.modelo.id') === item.id;
-        });
+        return self.store.filter('area-processo', {}, function(areaProcesso){
+          return areaProcesso.get('ativo') || self.get('model.areaprocesso.id') === areaProcesso.get('id');
+        })
       },
       selectValuePath: 'id',
-      selectLabelPath: 'nome',
-      validations:{
-        relationshipPresence: true
-      }
-    }, {
-      attribute: 'model.nivelcapacidade',
-      label: 'Nível de Capacidade',
-      type: 'select',
-      selectFunction: function(self){
-        return self.store.filter('nivel-capacidade', {}, function(item){
-          return item.get('ativo') || self.get('model.nivel-capacidade.id') === item.id;
-        });
-      },
-      selectValuePath: 'id',
-      selectLabelPath: 'nome',
-      validations:{
-        relationshipPresence: true
-      }
-    },
+      selectLabelPath: 'nome'
+    }
   ]
 });
