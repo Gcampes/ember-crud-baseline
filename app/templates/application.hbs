@@ -7,13 +7,28 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <!-- <li>{{#link-to 'person'}}Person{{/link-to}}</li>
-          <li>{{#link-to 'city'}}City{{/link-to}}</li>
-          <li>{{#link-to 'category'}}Category{{/link-to}}</li>
-          <li>{{#link-to 'citizen'}}Citizen{{/link-to}}</li> -->
           <li>{{#link-to 'modelo'}}Modelo{{/link-to}}</li>
-          <li>{{#link-to 'meta-generica'}}Meta{{/link-to}}</li>
-          <li>{{#link-to 'nivel-capacidade'}}Capacidade{{/link-to}}</li>
+
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Metas <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>{{#link-to 'meta-generica'}}Metas Genéricas{{/link-to}}</li>
+              <li>{{#link-to 'meta-especifica'}}Metas Específicas{{/link-to}}</li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Níveis <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>{{#link-to 'nivel-capacidade'}}Níveis de Capacidade{{/link-to}}</li>
+              <li>{{#link-to 'nivel-maturidade'}}Níveis de Maturidade{{/link-to}}</li>
+            </ul>
+          </li>
+
+          <li>{{#link-to 'area-processo'}}Áreas de Processo{{/link-to}}</li>
+          <li>{{#link-to 'pratica-especifica'}}Práticas Específicas{{/link-to}}</li>
+          <li>{{#link-to 'produto-trabalho'}}Produtos de Trabalho{{/link-to}}</li>
         </ul>
       </div>
     </div>

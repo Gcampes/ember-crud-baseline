@@ -12,9 +12,46 @@
   }
 }
 
+li.dropdown.open {
+    background-color: #E7E7E7;
+}
+
+.navbar-nav > li > .dropdown-menu{
+  margin-top: 4px;
+}
+
+.selectize-control.multi .selectize-input.has-items{
+  height: 39px;
+}
+
+.selectize-control.plugin-remove_button [data-value] .remove{
+  font-size: 16px;
+  top: 2px;
+}
+
+.selectize-control.multi .selectize-input [data-value], .selectize-control.multi .selectize-input [data-value] .active, .selectize-control.multi .selectize-input [data-value] .focus{
+  background-image: none !important;
+  border: none !important;
+  background-color: #868686 !important;
+  top: -1px;
+  color: white;
+  padding: 3px 9px;
+  padding-right: 23px !important;
+  border-radius: 4px;
+  border-bottom: 5px solid #6F6F6F !important;
+
+  .remove{
+    border-left: none;
+  }
+}
+
 .selectize-control.single .selectize-input{
   background-image: none;
   background-color: #FBFBFB;
+}
+
+.has-error .form-control, .has-error .form-control:focus{
+  border-bottom: 4px solid #ff4136;
 }
 
 .bootstrap-switch-wrapper {
@@ -34,8 +71,6 @@
 .bootstrap-switch-default{
   border-bottom: 5px solid #D0D0D0;
 }
-
-
 
 .selectize-control.plugin-remove_button [data-value] {
   position: relative;
@@ -202,7 +237,7 @@ body{
   box-shadow: none;
 }
 
-.form-control.has-error{
+.form-control .has-error{
   border: 1px solid black !important;
 }
 
