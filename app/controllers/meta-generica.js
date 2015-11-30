@@ -5,10 +5,6 @@ const{
 } = Ember;
 
 export default Ember.Controller.extend({
-  didModelChange: Ember.observer('model.nivelcapacidade', function(){
-    console.log(this.get('model.nivelcapacidade'));
-  }),
-
   tableOptionsMC: new A([{
     contentPath: 'id',
     columnTitle: 'Id'
