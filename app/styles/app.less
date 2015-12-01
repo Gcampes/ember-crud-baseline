@@ -1,5 +1,7 @@
-.selectize-input {
+.selectize-input, .selectize-input .input-active{
   z-index: 0;
+  background-color: #FBFBFB;
+  border-color: #b8b8b8;
 
   .item{
     background-color: #868686;
@@ -10,6 +12,66 @@
     border-radius: 4px;
     border-bottom: 5px solid #6F6F6F;
   }
+}
+
+.selectize-dropdown{
+  margin-bottom: 30px;
+}
+
+li.dropdown.open {
+    background-color: #E7E7E7;
+}
+
+.navbar-nav > li > .dropdown-menu{
+  margin-top: 4px;
+}
+
+.selectize-control.multi .selectize-input.has-items{
+  min-height: 39px;
+}
+
+.selectize-input.items.not-full:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #808080 transparent transparent transparent;
+}
+
+.selectize-control.plugin-remove_button [data-value] .remove{
+  font-size: 16px;
+  top: 2px;
+}
+
+.selectize-control.multi .selectize-input [data-value], .selectize-control.multi .selectize-input [data-value] .active, .selectize-control.multi .selectize-input [data-value] .focus{
+  background-image: none !important;
+  border: none !important;
+  background-color: #868686 !important;
+  top: -1px;
+  color: white;
+  padding: 3px 9px;
+  padding-right: 23px !important;
+  border-radius: 4px;
+  border-bottom: 5px solid #6F6F6F !important;
+
+  .remove{
+    border-left: none;
+  }
+}
+
+.selectize-control.single .selectize-input{
+  background-image: none;
+  background-color: #FBFBFB;
+}
+
+.has-error .form-control, .has-error .form-control:focus{
+  border-bottom: 4px solid #ff4136;
 }
 
 .bootstrap-switch-wrapper {
@@ -29,8 +91,6 @@
 .bootstrap-switch-default{
   border-bottom: 5px solid #D0D0D0;
 }
-
-
 
 .selectize-control.plugin-remove_button [data-value] {
   position: relative;
@@ -141,6 +201,7 @@ body{
 }
 
 .flash-messages{
+  z-index: 10;
   position: fixed;
   right: 5px;
   bottom: 5px;
@@ -162,6 +223,10 @@ body{
 
 .alert-warning:before{
   content:'\f00d';
+}
+
+.alert-danger::before{
+  content: "\f071";
 }
 
 .imdt-table-pagination-summary{
@@ -190,8 +255,11 @@ body{
   float: right;
 }
 
-.form-control{
+.form-control {
   border-color: #D8D8D8;
+  border-bottom: 4px solid #D8D8D8;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 table thead > tr > th.sort:after {

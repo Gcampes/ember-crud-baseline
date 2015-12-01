@@ -6,19 +6,35 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('person', function() {
+  this.route('modelo', function() {
     this.route('add');
     this.route('edit', {path:'edit/:id'});
   });
-  this.route('city', function(){
+  this.route('meta-generica', function() {
     this.route('add');
     this.route('edit', {path:'edit/:id'});
   });
-  this.route('category', function(){
+  this.route('nivel-capacidade', function() {
     this.route('add');
-    this.route('edit', {path:'category/:id'});
+    this.route('edit', {path:'edit/:id'});
   });
-  this.route('citizen', function() {
+  this.route('nivel-maturidade', function() {
+    this.route('add');
+    this.route('edit', {path:'edit/:id'});
+  });
+  this.route('area-processo', function() {
+    this.route('add');
+    this.route('edit', {path:'edit/:id'});
+  });
+  this.route('meta-especifica', function() {
+    this.route('add');
+    this.route('edit', {path:'edit/:id'});
+  });
+  this.route('pratica-especifica', function() {
+    this.route('add');
+    this.route('edit', {path:'edit/:id'});
+  });
+  this.route('produto-trabalho', function() {
     this.route('add');
     this.route('edit', {path:'edit/:id'});
   });
