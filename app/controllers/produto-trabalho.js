@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
   },
   {
     contentPath: 'descricao',
-    columnTitle: 'Desrição'
+    columnTitle: 'Descrição'
   },
   {
     contentPath: 'template',

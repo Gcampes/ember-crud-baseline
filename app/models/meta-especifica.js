@@ -10,24 +10,18 @@ let MetaEspecifica = DS.Model.extend({
 });
 
 MetaEspecifica.reopenClass({
-  FIXTURES: [
-    {
-      id: 1,
-      ativo: true,
-      sigla: "M1",
-      nome: "Meta Específica 1",
-      descricao: "Descrição Meta Específica 1",
-      areaprocesso: 1
-    },
-    {
-      id: 2,
-      ativo: true,
-      sigla: "M2",
-      nome: "Meta Específica 2",
-      descricao: "Descrição Meta Específica 2",
-      areaprocesso: 2
-    },
-  ]
+  FIXTURES: []
 });
+
+for(var i = 1; i <= 500; i++){
+  MetaEspecifica.FIXTURES.push({
+    id: i,
+    ativo: true,
+    sigla: "ME" + i,
+    nome: "Meta Específica " + i,
+    descricao: "Meta Específica " + i + " Descrição",
+    areaprocesso: Math.floor(Math.random() * (500)) + 1
+  });
+}
 
 export default MetaEspecifica;

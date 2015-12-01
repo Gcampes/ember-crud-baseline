@@ -35,7 +35,7 @@ NivelMaturidade.reopenClass({
       ativo: true,
       nome: 'Parametrizado',
       sigla: 'N4',
-      descricao: 'Descrição Parametrizado'
+      descricao: 'Quantitativamente Gerenciado'
     },
     {
       id:5,

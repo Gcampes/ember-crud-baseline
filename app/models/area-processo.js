@@ -11,26 +11,19 @@ let AreaProcesso = DS.Model.extend({
 });
 
 AreaProcesso.reopenClass({
-  FIXTURES: [
-    {
-      id: 1,
-      ativo: true,
-      sigla: "A1",
-      nome: "Área de Processo 1",
-      descricao: "Área de Processo 1 Descrição",
-      modelo: 1,
-      nivelmaturidade: 4
-    },
-    {
-      id: 2,
-      ativo: true,
-      sigla: "MP",
-      nome: "Área de Processo 2",
-      descricao: "Área de Processo 2 Descrição",
-      modelo: 2,
-      nivelmaturidade: 2
-    },
-  ]
+  FIXTURES: []
 });
+
+for(var i = 1; i <= 500; i++){
+  AreaProcesso.FIXTURES.push({
+    id: i,
+    ativo: true,
+    sigla: "A" + i,
+    nome: "Área de Processo " + i,
+    descricao: "Área de Processo " + i + " Descrição",
+    modelo: Math.floor(Math.random() * (25)) + 1,
+    nivelmaturidade: Math.floor(Math.random() * (5)) + 1
+  });
+}
 
 export default AreaProcesso;

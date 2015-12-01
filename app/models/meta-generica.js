@@ -13,15 +13,19 @@ let MetaGenerica = DS.Model.extend({
 });
 
 MetaGenerica.reopenClass({
-  FIXTURES: [{
-    id:1,
-    ativo: true,
-    nome: 'Meta Genérica 1',
-    sigla: 'MG',
-    descricao: 'Descrição Meta Genérica 1',
-    modelo: 1,
-    nivelcapacidade: 1
-  }]
+  FIXTURES: []
 });
+
+for(var i = 1; i <= 500; i++){
+  MetaGenerica.FIXTURES.push({
+    id: i,
+    ativo: true,
+    nome: 'Meta Genérica ' + i,
+    sigla: "MG" + i,
+    descricao: 'Descrição Meta Genérica ' + i,
+    modelo: Math.floor(Math.random() * (25)) + 1,
+    nivelcapacidade: 1
+  });
+}
 
 export default MetaGenerica;
