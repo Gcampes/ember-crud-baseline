@@ -11,35 +11,26 @@ let PraticaEspecifica = DS.Model.extend({
 });
 
 PraticaEspecifica.reopenClass({
-  FIXTURES: [
-    {
-      id: 1,
-      ativo: true,
-      sigla: "P1",
-      nome: "Prática Específica 1",
-      descricao: "Prática Específica 1 Descrição",
-      metaespecifica: 1,
-      produtostrabalho: [1, 2]
-    },
-    {
-      id: 2,
-      ativo: true,
-      sigla: "P2",
-      nome: "Prática Específica 2",
-      descricao: "Prática Específica 2 Descrição",
-      metaespecifica: 2,
-      produtostrabalho: [2]
-    },
-    {
-      id: 3,
-      ativo: true,
-      sigla: "P3",
-      nome: "Prática Específica 3",
-      descricao: "Prática Específica 3 Descrição",
-      metaespecifica: 1,
-      produtostrabalho: [1]
-    },
-  ]
+  FIXTURES: []
 });
+
+for(var i = 1; i <= 500; i++){
+  var array = []
+  for (var j = 1; j <= 500; j++) {
+    if(Math.random() < 0.01){
+      array.push(j);
+    }
+  }
+  // console.log(array);
+  PraticaEspecifica.FIXTURES.push({
+    id: i,
+    ativo: true,
+    sigla: "P" + i,
+    nome: "Prática Específica " + i,
+    descricao: "Prática Específica " + i + " Descrição",
+    metaespecifica: 1,
+    produtostrabalho: array
+  });
+}
 
 export default PraticaEspecifica;

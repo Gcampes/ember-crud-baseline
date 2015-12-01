@@ -1,5 +1,7 @@
-.selectize-input {
+.selectize-input, .selectize-input .input-active{
   z-index: 0;
+  background-color: #FBFBFB;
+  border-color: #b8b8b8;
 
   .item{
     background-color: #868686;
@@ -12,6 +14,10 @@
   }
 }
 
+.selectize-dropdown{
+  margin-bottom: 30px;
+}
+
 li.dropdown.open {
     background-color: #E7E7E7;
 }
@@ -21,7 +27,21 @@ li.dropdown.open {
 }
 
 .selectize-control.multi .selectize-input.has-items{
-  height: 39px;
+  min-height: 39px;
+}
+
+.selectize-input.items.not-full:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #808080 transparent transparent transparent;
 }
 
 .selectize-control.plugin-remove_button [data-value] .remove{
@@ -181,6 +201,7 @@ body{
 }
 
 .flash-messages{
+  z-index: 10;
   position: fixed;
   right: 5px;
   bottom: 5px;
@@ -202,6 +223,10 @@ body{
 
 .alert-warning:before{
   content:'\f00d';
+}
+
+.alert-danger::before{
+  content: "\f071";
 }
 
 .imdt-table-pagination-summary{
@@ -235,10 +260,6 @@ body{
   border-bottom: 4px solid #D8D8D8;
   -webkit-box-shadow: none;
   box-shadow: none;
-}
-
-.form-control .has-error{
-  border: 1px solid black !important;
 }
 
 table thead > tr > th.sort:after {

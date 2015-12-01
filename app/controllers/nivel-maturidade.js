@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
   },
   {
     contentPath: 'descricao',
-    columnTitle: 'Desrição'
+    columnTitle: 'Descrição'
   },
   {
     contentPath: 'template',
@@ -38,7 +38,7 @@ export default Ember.Controller.extend({
       type: 'text',
       validations:{
         presence: true,
-        length: 2
+        length: {minimum: 2}
       }
     }, {
       attribute: 'model.nome',
