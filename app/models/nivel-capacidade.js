@@ -17,14 +17,14 @@ NivelCapacidade.reopenClass({
   }]
 });
 
-for(var i = 3; i <= 25; i++){
-  NivelCapacidade.FIXTURES.push({
-    id: i,
-    ativo: true,
-    sigla: "NC" + i,
-    nome: 'Nível de Capacidade ' + i,
-    descricao: 'Descrição Nível de Capacidade ' + i,
-  });
-}
+// for(var i = 3; i <= 25; i++){
+//   NivelCapacidade.FIXTURES.push({
+//     id: i,
+//     ativo: true,
+//     sigla: "NC" + i,
+//     nome: 'Nível de Capacidade ' + i,
+//     descricao: 'Descrição Nível de Capacidade ' + i,
+//   });
+// }
 
 export default NivelCapacidade;

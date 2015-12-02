@@ -1,6 +1,7 @@
 import DS from 'ember-data';
+import RollbackRelationship from '../mixins/rollback-relationship';
 
-let MetaGenerica = DS.Model.extend({
+let MetaGenerica = DS.Model.extend(RollbackRelationship, {
   ativo: DS.attr('boolean'),
   nome: DS.attr('string'),
   sigla: DS.attr('string'),
@@ -16,16 +17,16 @@ MetaGenerica.reopenClass({
   FIXTURES: []
 });
 
-for(var i = 1; i <= 500; i++){
-  MetaGenerica.FIXTURES.push({
-    id: i,
-    ativo: true,
-    nome: 'Meta Genérica ' + i,
-    sigla: "MG" + i,
-    descricao: 'Descrição Meta Genérica ' + i,
-    modelo: Math.floor(Math.random() * (25)) + 1,
-    nivelcapacidade: 1
-  });
-}
+// for(var i = 1; i <= 500; i++){
+//   MetaGenerica.FIXTURES.push({
+//     id: i,
+//     ativo: true,
+//     nome: 'Meta Genérica ' + i,
+//     sigla: "MG" + i,
+//     descricao: 'Descrição Meta Genérica ' + i,
+//     modelo: Math.floor(Math.random() * (25)) + 1,
+//     nivelcapacidade: 1
+//   });
+// }
 
 export default MetaGenerica;

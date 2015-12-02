@@ -32,14 +32,15 @@ Modelo.reopenClass({
   ]
 });
 
-for(var i = 3; i <= 25; i++){
-  Modelo.FIXTURES.push({
-    id: i,
-    ativo: true,
-    sigla: "M" + i,
-    nome: "Modelo " + i,
-    descricao: "Descrição Modelo " + i,
-  });
-}
+
+// for(var i = 3; i <= 25; i++){
+//   Modelo.FIXTURES.push({
+//     id: i,
+//     ativo: true,
+//     sigla: "M" + i,
+//     nome: "Modelo " + i,
+//     descricao: "Descrição Modelo " + i,
+//   });
+// }
 
 export default Modelo;
