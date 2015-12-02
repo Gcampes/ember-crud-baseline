@@ -1,6 +1,7 @@
 import DS from 'ember-data';
+import RollbackRelationship from '../mixins/rollback-relationship';
 
-let AreaProcesso = DS.Model.extend({
+let AreaProcesso = DS.Model.extend(RollbackRelationship, {
   ativo: DS.attr('boolean'),
   nome: DS.attr('string'),
   sigla: DS.attr('string'),
@@ -14,16 +15,16 @@ AreaProcesso.reopenClass({
   FIXTURES: []
 });
 
-for(var i = 1; i <= 500; i++){
-  AreaProcesso.FIXTURES.push({
-    id: i,
-    ativo: true,
-    sigla: "A" + i,
-    nome: "Área de Processo " + i,
-    descricao: "Área de Processo " + i + " Descrição",
-    modelo: Math.floor(Math.random() * (25)) + 1,
-    nivelmaturidade: Math.floor(Math.random() * (5)) + 1
-  });
-}
+// for(var i = 1; i <= 500; i++){
+//   AreaProcesso.FIXTURES.push({
+//     id: i,
+//     ativo: true,
+//     sigla: "A" + i,
+//     nome: "Área de Processo " + i,
+//     descricao: "Área de Processo " + i + " Descrição",
+//     modelo: Math.floor(Math.random() * (25)) + 1,
+//     nivelmaturidade: Math.floor(Math.random() * (5)) + 1
+//   });
+// }
 
 export default AreaProcesso;

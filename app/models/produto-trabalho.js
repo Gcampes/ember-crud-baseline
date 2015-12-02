@@ -11,14 +11,14 @@ ProdutoTrabalho.reopenClass({
   FIXTURES: []
 });
 
-for(var i = 1; i <= 500; i++){
-  ProdutoTrabalho.FIXTURES.push({
-    id: i,
-    ativo: true,
-    template: "template"+i,
-    nome: "Produto de Trabalho "+i,
-    descricao: "Descrição Produto de Trabalho "+i,
-  });
-}
+// for(var i = 1; i <= 500; i++){
+//   ProdutoTrabalho.FIXTURES.push({
+//     id: i,
+//     ativo: true,
+//     template: "template"+i,
+//     nome: "Produto de Trabalho "+i,
+//     descricao: "Descrição Produto de Trabalho "+i,
+//   });
+// }
 
 export default ProdutoTrabalho;
