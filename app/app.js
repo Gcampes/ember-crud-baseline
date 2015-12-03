@@ -60,8 +60,8 @@ for(var i = 1; i <= 500; i++){
     sigla: "A" + i,
     nome: "Área de Processo " + i,
     descricao: "Área de Processo " + i + " Descrição",
-    modelo: Math.floor(Math.random() * (25)) + 1,
-    nivelmaturidade: Math.floor(Math.random() * (5)) + 1
+    modelo: Math.floor(Math.random() * 25) + 1,
+    nivelmaturidade: Math.floor(Math.random() * 5) + 1
   });
 }
 
@@ -72,7 +72,7 @@ for(var i = 1; i <= 500; i++){
     sigla: "ME" + i,
     nome: "Meta Específica " + i,
     descricao: "Meta Específica " + i + " Descrição",
-    areaprocesso: Math.floor(Math.random() * (500)) + 1
+    areaprocesso: Math.floor(Math.random() * 500) + 1
   });
 }
 
@@ -83,13 +83,13 @@ for(var i = 1; i <= 500; i++){
     nome: 'Meta Genérica ' + i,
     sigla: "MG" + i,
     descricao: 'Descrição Meta Genérica ' + i,
-    modelo: Math.floor(Math.random() * (25)) + 1,
+    modelo: Math.floor(Math.random() * 25) + 1,
     nivelcapacidade: 1
   });
 }
 
 for(var i = 1; i <= 500; i++){
-  var array = []
+  var array = [];
   for (var j = 1; j <= 500; j++) {
     if(Math.random() < 0.01){
       array.push(j);
@@ -102,7 +102,7 @@ for(var i = 1; i <= 500; i++){
     sigla: "P" + i,
     nome: "Prática Específica " + i,
     descricao: "Prática Específica " + i + " Descrição",
-    metaespecifica: 1,
+    metaespecifica: Math.floor(Math.random() * 500) + 1,
     produtostrabalho: array
   });
 }
