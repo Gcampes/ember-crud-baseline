@@ -5,6 +5,7 @@ const{
 } = Ember;
 
 export default Ember.Controller.extend({
+  tableSortPropertiesMC: new A(['sigla:asc', 'nome:desc']),
   tableOptionsMC: new A([{
     contentPath: 'id',
     columnTitle: 'Id'
@@ -66,7 +67,7 @@ export default Ember.Controller.extend({
       selectFunction: function(self){
         return self.store.filter('meta-especifica', {}, function(meta){
           return meta.get('ativo') || self.get('model.metaespecifica.id') === meta.get('id');
-        })
+        });
       },
       selectValuePath: 'id',
       selectLabelPath: 'nome',
@@ -80,7 +81,7 @@ export default Ember.Controller.extend({
       selectFunction: function(self){
         return self.store.filter('produto-trabalho', {}, function(produtotrabalho){
           return produtotrabalho.get('ativo');
-        })
+        });
       },
       selectValuePath: 'id',
       selectLabelPath: 'nome',

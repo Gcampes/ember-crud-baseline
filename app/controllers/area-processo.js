@@ -5,6 +5,7 @@ const{
 } = Ember;
 
 export default Ember.Controller.extend({
+  tableSortPropertiesMC: new A(['sigla:asc', 'nome:desc']),
   tableOptionsMC: new A([{
     contentPath: 'id',
     columnTitle: 'Id'
@@ -69,7 +70,7 @@ export default Ember.Controller.extend({
       type: 'select',
       selectFunction: function(self){
         return self.store.filter('modelo', {}, function(modelo){
-          return modelo.get('ativo') || self.get('model.modelo.id') === modelo.id
+          return modelo.get('ativo') || self.get('model.modelo.id') === modelo.id;
         });
       },
       selectValuePath: 'id',
@@ -83,7 +84,7 @@ export default Ember.Controller.extend({
       type: 'select',
       selectFunction: function(self){
         return self.store.filter('nivel-maturidade', {}, function(nivelMaturidade){
-          return nivelMaturidade.get('ativo') || self.get('model.nivel-maturidade.id') === nivelMaturidade.id
+          return nivelMaturidade.get('ativo') || self.get('model.nivel-maturidade.id') === nivelMaturidade.id;
         });
       },
       selectValuePath: 'id',

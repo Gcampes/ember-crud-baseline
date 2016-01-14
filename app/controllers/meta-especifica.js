@@ -5,6 +5,7 @@ const{
 } = Ember;
 
 export default Ember.Controller.extend({
+  tableSortPropertiesMC: new A(['sigla:asc', 'nome:desc']),
   tableOptionsMC: new A([{
     contentPath: 'id',
     columnTitle: 'Id'
@@ -66,7 +67,7 @@ export default Ember.Controller.extend({
       selectFunction: function(self){
         return self.store.filter('area-processo', {}, function(areaProcesso){
           return areaProcesso.get('ativo') || self.get('model.areaprocesso.id') === areaProcesso.get('id');
-        })
+        });
       },
       selectValuePath: 'id',
       selectLabelPath: 'nome'

@@ -5,6 +5,7 @@ const{
 } = Ember;
 
 export default Ember.Controller.extend({
+  tableSortPropertiesMC: new A(['sigla:asc', 'nome:desc']),
   tableOptionsMC: new A([{
     contentPath: 'id',
     columnTitle: 'Id'

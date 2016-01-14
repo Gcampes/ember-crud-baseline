@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.FixtureAdapter.extend({
-  queryFixtures: function(records, query, type) {
+  queryFixtures: function(records, query) {
       return records.filter(function(record) {
           for(var key in query) {
               if (!query.hasOwnProperty(key)) { continue; }

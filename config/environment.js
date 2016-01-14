@@ -2,9 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-magic-crud',
+    modulePrefix: 'crud-baseline',
     environment: environment,
-    baseURL: '/ember-magic-crud',
+    baseURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
